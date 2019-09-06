@@ -1,8 +1,11 @@
 
 
-import scrapy
+
 import re
-from e3_qq.items import QQItem
+
+import scrapy
+
+from e3_qqzhaopin.items import QQItem
 
 
 class QQSpider(scrapy.Spider):
@@ -10,7 +13,7 @@ class QQSpider(scrapy.Spider):
     name = "qq"
 
     # 设置只能爬取腾讯域名的信息
-    allowed_domains = ["hr.tencent.com"]
+    allowed_domains = ["tencent.com"]
 
     start_urls = ["https://hr.tencent.com/position.php?&start=0#a"]
 
@@ -21,7 +24,7 @@ class QQSpider(scrapy.Spider):
         :param response:
         :return:
         """
-        for each in response.xpath('//div[@class="search-content"]'):
+        for each in response.xpath('//div[@class="correlation-degree"]'):
             # 对于得到的每一个工作信息内容
             # 把数据封装入相应的item内
             item = QQItem()
