@@ -1,6 +1,4 @@
 
-
-
 import re
 
 import scrapy
@@ -15,7 +13,7 @@ class QQSpider(scrapy.Spider):
     # 设置只能爬取腾讯域名的信息
     allowed_domains = ["tencent.com"]
 
-    start_urls = ["https://hr.tencent.com/position.php?&start=0#a"]
+    start_urls = ["https://careers.tencent.com/search.html?&start=0#a"]
 
 
     def parse(self, response):
@@ -24,11 +22,18 @@ class QQSpider(scrapy.Spider):
         :param response:
         :return:
         """
-        for each in response.xpath('//div[@class="correlation-degree"]'):
+        print("还未执行函数")
+        content = response.body.decode('utf-8')
+        # json字符串转换为python格式
+        print(content)
+        # data = json.loads(content, encoding="gbk")
+        # print()
+        print(response.xpath('//tr[@class="even"] | //tr[@class="odd"]'))
+        for each in response.xpath('//div[@class="recruit-list"]'):
             # 对于得到的每一个工作信息内容
             # 把数据封装入相应的item内
             item = QQItem()
-            print(3)
+            print("77777777777777777")
             name = each.xpath("./a/h4/text()").extract()[0]
             print("3")
             detailLink = each.xpath("./td[1]/a/@href").extract()[0]
