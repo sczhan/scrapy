@@ -1,9 +1,20 @@
-
-import re
+import datetime
+import json
 
 import scrapy
 
 from e3_qqzhaopin.items import QQItem
+
+
+def shijianjie():
+    import time
+    a = datetime.datetime.now()
+    b = str(int(time.mktime(a.timetuple())))
+    c = str("%06d" % a.microsecond)[0:3]
+    time = str(b) + str(c)
+    return time
+
+a = str(shijianjie())
 
 
 class QQSpider(scrapy.Spider):
@@ -13,8 +24,12 @@ class QQSpider(scrapy.Spider):
     # 设置只能爬取腾讯域名的信息
     allowed_domains = ["tencent.com"]
 
-    start_urls = ["https://careers.tencent.com/search.html?&start=0#a"]
-
+    start_urls = ["https://careers.tencent.com/tencentcareer/api/post/Query?timestamp=1576654934354&countryId=&cityId=&bgIds=&productId=&categoryId=&parentCategoryId=&attrId=&keyword=&pageIndex=1&pageSize=10&language=zh-cn&area=cn"]
+    # start_urls = []
+    # for i in range(1, 10):
+    #     url = "https://careers.tencent.com/tencentcareer/api/post/Query?timestamp=" + str(shijianjie()) + "&countryId=&cityId=&bgIds=&productId=&categoryId=&parentCategoryId=&attrId=&keyword=&pageIndex=" + str(i) + "&pageSize=10&language=zh-cn&area=cn"
+    #     start_urls.append(url)
+    # print(start_urls)
 
     def parse(self, response):
         """
@@ -22,42 +37,51 @@ class QQSpider(scrapy.Spider):
         :param response:
         :return:
         """
-        print("还未执行函数")
         content = response.body.decode('utf-8')
         # json字符串转换为python格式
-        print(content)
-        # data = json.loads(content, encoding="gbk")
-        # print()
-        print(response.xpath('//tr[@class="even"] | //tr[@class="odd"]'))
-        for each in response.xpath('//div[@class="recruit-list"]'):
+        # print(content)
+        data = json.loads(content, encoding="utf-8")
+        # print(data)
+        urlss = []
+        for each in data["Data"]["Posts"]:
+            # print(each)
             # 对于得到的每一个工作信息内容
             # 把数据封装入相应的item内
             item = QQItem()
-            print("77777777777777777")
-            name = each.xpath("./a/h4/text()").extract()[0]
-            print("3")
-            detailLink = each.xpath("./td[1]/a/@href").extract()[0]
-            positionInfo = each.xpath("./td[2]/text").extract()[0]
-            workLocation = each.xpath("./td[4]/text()").extract()[0]
+            name = each["RecruitPostName"]
+            print(name)
+            detailLink = each["PostURL"]
+            positionInfo = each["Responsibility"]
+            workLocation = each["LocationName"]
 
-            item["name"] = name.encode("utf-8")
-            item["detailLink"] = detailLink.encode("utf-8")
-            item["positionInfo"] = positionInfo.encode("utf-8")
-            item["workLocation"] = workLocation.encode("utf-8")
-
-
-            # 处理继续爬取的链接
-            # 通过得到当前页, 提取数字,把数字加10, 替换成原来的数字,就是下一个页面地址
-            # 提取当前页的数字
-            curpage = re.search("\d+", response.url).group(1)
-            # 生成下一页的数字值
-            page = int(curpage) + 10
-            # 生成下一页url
-            url = re.sub("\d", str(page), response.url)
-
-            # 把地址通过yield返回
-            # 注意callback的写法
-            yield scrapy.Request(url, callback=self.parse)
-
-            # 获取的item提交给pipeline
+            item["name"] = name
+            item["detailLink"] = detailLink
+            item["positionInfo"] = positionInfo
+            item["workLocation"] = workLocation
             yield item
+
+    #         # print(type(item))
+    #
+    #         # 处理继续爬取的链接
+    #         # 通过得到当前页, 提取数字,把数字加10, 替换成原来的数字,就是下一个页面地址
+    #         # 提取当前页的数字
+    #         # curpage = re.search("pageIndex=\d", response.url)
+    #         # print(11)
+    #         # print(curpage)
+    #         # # 生成下一页的数字值
+    #         # page = int(curpage) + 10
+    #         # 生成下一页url
+    #
+    #
+        for i in range(2, 5):
+              urls = "https://careers.tencent.com/tencentcareer/api/post/Query?timestamp=" + \
+                     str(a)+ "&countryId=&cityId=&bgIds=&productId=&categoryId=&parentCategoryId=&attrId=&keyword=&pageIndex=" + \
+                     str(i) + "&pageSize=10&language=zh-cn&area=cn"
+              yield scrapy.Request(urls, callback=self.parse, )
+    #     # print("*"*20, urlss,  "#"*20, str(times))
+    #     #
+    #     # # 把地址通过yield返回
+    #     # # 注意callback的写法
+    #         yield scrapy.Request(urls, callback=self.parse,)
+    #     yield item
+    #     # # 获取的item提交给pipeline

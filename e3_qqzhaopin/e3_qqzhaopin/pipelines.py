@@ -17,11 +17,17 @@ class QQPipeline(object):
     那么在什么时候关闭,打开文件
     """
     def __init__(self):
-        self.file = open('qq.json', "wb")
+        self.file = open('qq.json', "a", encoding="utf-8")
 
     def process_item(self, item, spider):
-         # item 可以直接转换成字典
-        content = json.dumps(dict(item), ensure_ascii=False, indent=4) + "\n"
+        # item 可以直接转换成字典
+        # print(type(item))
+        content = json.dumps(dict(item), ensure_ascii=False, indent=4)
+        self.file.write(content)
+        # with open("qq.json", "w")as f:
+        #     f.write(dict(item))
+        return item
+
 
     def close_spider(self, spider):
         self.file.close()
