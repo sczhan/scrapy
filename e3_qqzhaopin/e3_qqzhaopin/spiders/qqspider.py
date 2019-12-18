@@ -54,10 +54,10 @@ class QQSpider(scrapy.Spider):
             positionInfo = each["Responsibility"]
             workLocation = each["LocationName"]
 
-            item["name"] = name
-            item["detailLink"] = detailLink
-            item["positionInfo"] = positionInfo
-            item["workLocation"] = workLocation
+            item["name"] = name.strip()
+            item["detailLink"] = detailLink.strip()
+            item["positionInfo"] = positionInfo.strip().split("\n")
+            item["workLocation"] = workLocation.strip()
             yield item
 
     #         # print(type(item))
