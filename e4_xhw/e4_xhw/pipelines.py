@@ -17,7 +17,7 @@ class E4XhwPipeline(object):
 class XiaohuaPipeline(object):
 
     def __init__(self):
-        self.file = open("xiaohua.json","w", encoding="utf-8")
+        self.file = open("xiaohua.json","a", encoding="utf-8")
 
     def process_item(self, item, spider):
         str = json.dumps(dict(item), ensure_ascii=False, indent=4)
