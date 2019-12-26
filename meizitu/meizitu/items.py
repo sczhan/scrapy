@@ -13,5 +13,6 @@ class MeizituItem(scrapy.Item):
     # name = scrapy.Field()
 
     name = scrapy.Field()
-    img = scrapy.Field()
+    img_zhu = scrapy.Field()
     img_down = scrapy.Field()
+    page = scrapy.Field()
