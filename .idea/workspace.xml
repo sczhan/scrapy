@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6e1b4c5-2a07-4436-9017-46e88fbf50e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/meizitu/.idea/meizitu.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/meizitu/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/meizitu/items.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/meizitu/middlewares.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/meizitu/pipelines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/meizitu/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/meizitu/spiders/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/meizitu/spiders/meizitu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meizitu/scrapy.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/爬虫(scrapy).iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/爬虫(scrapy).iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e4_xhw/e4_xhw/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/e4_xhw/e4_xhw/pipelines.py" afterDir="false" />
-    </list>
+    <list default="true" id="a6e1b4c5-2a07-4436-9017-46e88fbf50e1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/e4_xhw/e4_xhw/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="27" column="81" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
+            <state relative-caret-position="482">
+              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -108,11 +90,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="775" />
-    <option name="y" value="275" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -212,14 +193,24 @@
       <workItem from="1577347105405" duration="167000" />
       <workItem from="1577347292604" duration="113000" />
       <workItem from="1577347440170" duration="122000" />
+      <workItem from="1577347616263" duration="444000" />
     </task>
+    <task id="LOCAL-00001" summary="妹子图">
+      <created>1577347846214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577347846214</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5328000" />
+    <option name="totallyTimeSpent" value="5772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.52973723" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -246,6 +237,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="妹子图" />
+    <option name="LAST_COMMIT_MESSAGE" value="妹子图" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/_scrapy_$qqstart.coverage" NAME="qqstart Coverage Results" MODIFIED="1577336424918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/e3_qqzhaopin" />
@@ -317,8 +312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/e4_xhw/e4_xhw/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="27" column="81" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
+        <state relative-caret-position="482">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
