@@ -28,6 +28,9 @@ class Meizituspider(scrapy.Spider):
            zhuye_url.append(zhuyemian)
 
        for each_zhu_url in zhuye_url:
+       # each_zhu_url = random.choice(zhuye_url)
+       # print(each_zhu_url)
+
            headers = {
                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6823.400 QQBrowser/10.3.3117.400"
            }
@@ -43,6 +46,7 @@ class Meizituspider(scrapy.Spider):
            item["name"] = names
            item["page"] = pages
            item["img_down"] = imgsss
+           print(imgsss)
            item["img_zhu"] = zhuye_url
 
            yield item
