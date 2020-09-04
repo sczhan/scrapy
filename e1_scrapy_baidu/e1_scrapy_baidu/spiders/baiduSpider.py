@@ -26,4 +26,3 @@ class BaiduSpider(scrapy.Spider):
         with open("baidu.html", "w", encoding="utf-8")as  f:
             f.write(response.body.decode("utf-8"))
 
-1111
